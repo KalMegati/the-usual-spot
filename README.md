@@ -10,4 +10,4 @@ We got a city to burn.
 # writers: handle (string), password (string), icon (string)
 # locations: name (string), blurb (string), story (text), image (string)
 # characters: name (string), blurb (string), story (text), image (string)
-# hangs: location_id (integer), character_id (integer), blurb (string)
+# haunts: location_id (integer), character_id (integer), blurb (string)
