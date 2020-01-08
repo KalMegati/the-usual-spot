@@ -19,6 +19,15 @@
         <%= yield %>
 
       <footer class="branding">
+        <% if session[:writer_id] %>
+          <p>Viewing as Writer: "<%= Writer.find_by(id: session[:writer_id]).handle%>"</p>
+          <form action="/logout" method="POST">
+          <input type="submit" value="Log Out">
+          </form>
+        <% else %>
+          <p>Viewing as Anonymous Reader</p>
+        <% end %>
+        <br>
         <small>&copy; 2020 <strong>TheUsualSpot</strong></small>
       </footer>
     </div>

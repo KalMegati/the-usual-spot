@@ -8,12 +8,23 @@ class WritersController < ApplicationController
         erb :'/writers/new'
     end
 
-    post "/writers" do #creates the new writer, then opens their page
+    post "/writers/new" do #creates the new writer, then opens their page
         @writer = Writer.create(params[:writer])
-        redirect to "/writers/#{@writer.id}"
+        session[:writer_id] = @writer.id
+        redirect to "/home"
     end
 
-    get "/writers/:id" do
+    post "/writers/login" do
+        @writer = Writer.find_by(params[:writer])
+        session[:writer_id] = @writer.id
+        redirect to "/home"
+    end
+
+    get "/writers/login" do
+        erb :'/writers/login'
+    end
+
+    get "/writers/:id" do #displays the writer and their creations
         @writer = Writer.find(params[:id])
         erb :'/writers/show'
     end
