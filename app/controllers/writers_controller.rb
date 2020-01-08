@@ -1,6 +1,7 @@
 class WritersController < ApplicationController
 
     get "/writers" do #displays all writers
+        @writers = Writer.all
         erb :'/writers/index'
     end
     
@@ -14,14 +15,14 @@ class WritersController < ApplicationController
         redirect to "/home"
     end
 
-    post "/writers/login" do
+    get "/writers/login" do
+        erb :'/writers/login'
+    end
+
+    post "/writers/login" do #logs
         @writer = Writer.find_by(params[:writer])
         session[:writer_id] = @writer.id
         redirect to "/home"
-    end
-
-    get "/writers/login" do
-        erb :'/writers/login'
     end
 
     get "/writers/:id" do #displays the writer and their creations
