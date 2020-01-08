@@ -4,5 +4,6 @@ class CreateWriters < ActiveRecord::Migration
       t.string :handle
       t.string :password
       t.string :icon
+    end
   end
 end
