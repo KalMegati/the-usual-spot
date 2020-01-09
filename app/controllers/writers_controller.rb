@@ -9,17 +9,17 @@ class WritersController < ApplicationController
         erb :'/writers/new'
     end
 
-    post "/writers/new" do #creates the new writer, then opens their page
+    post "/writers/new" do #creates the new writer, then sends back to home
         @writer = Writer.create(params[:writer])
         session[:writer_id] = @writer.id
         redirect to "/home"
     end
 
-    get "/writers/login" do
+    get "/writers/login" do #page to log in as existing writer
         erb :'/writers/login'
     end
 
-    post "/writers/login" do #logs
+    post "/writers/login" do #logs in, then sends back to home
         @writer = Writer.find_by(params[:writer])
         session[:writer_id] = @writer.id
         redirect to "/home"
@@ -30,7 +30,16 @@ class WritersController < ApplicationController
         erb :'/writers/show'
     end
 
+    get "/writers/:id/edit" do #page for writer to edit their information
 
+    end
 
+    patch "/writers/:id" do #edits the writer's information
+
+    end
+
+    delete "/writers/:id" do #deletes the writer and their creations
+
+    end
 
 end
