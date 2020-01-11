@@ -4,7 +4,7 @@ class HauntsController < ApplicationController
 
     end
 
-    post "/locatoin/:id/haunts" do #creates the haunt
+    post "/location/:id/haunts" do #creates the haunt
 
     end
 
