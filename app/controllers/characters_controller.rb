@@ -5,7 +5,7 @@ class CharactersController < ApplicationController
     end
 
     get "/characters/new" do #page to create new character
-
+        
     end
 
     post "/characters/new" do #creates a new character

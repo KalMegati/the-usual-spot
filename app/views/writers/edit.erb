@@ -1,0 +1,19 @@
+<h1>Update Your Information</h1>
+
+<br><br>
+
+<form action="/writers/<%= @writer.id %>" method="post">
+    <input id="hidden" type="hidden" name="_method" value="patch">
+
+    Handle: <input type="text" name="writer[handle]" value="<%= @writer.handle %>">
+    <br><br>
+
+    Password: <input type="text" name="writer[password]" value="<%= @writer.password %>">
+    <br><br>
+
+    Icon: <input type="text" name="writer[icon]" value="<%= @writer.icon %>">
+    <br><br>
+
+    <input type="submit" value="re:WRITE">
+
+</form>

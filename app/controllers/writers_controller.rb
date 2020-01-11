@@ -31,15 +31,18 @@ class WritersController < ApplicationController
     end
 
     get "/writers/:id/edit" do #page for writer to edit their information
-
+        @writer = Writer.find(params[:id])
+        erb :'/writers/edit'
     end
 
-    patch "/writers/:id" do #edits the writer's information
-
+    patch "/writers/:id" do #edits the writer's information, then displays them
+        @writer = Writer.find(params[:id])
+        @writer.update(params[:writer])
+        redirect to "/writers/#{@writer.id}"
     end
 
     delete "/writers/:id" do #deletes the writer and their creations
-
+        
     end
 
 end
