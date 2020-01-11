@@ -17,3 +17,14 @@
     <input type="submit" value="re:WRITE">
 
 </form>
+
+<br><br> --- <br><br>
+
+Delete Your Account:
+
+<form action="/writers/<%= @writer.id %>" method="post">
+    <input id="hidden" type="hidden" name="_method" value="delete">
+
+    <input type="submit" value="un:WRITE">
+
+</form>

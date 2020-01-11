@@ -42,7 +42,10 @@ class WritersController < ApplicationController
     end
 
     delete "/writers/:id" do #deletes the writer and their creations
-        
+        @writer = Writer.find(params[:id])
+        @writer.delete
+        session.clear
+        redirect to "/home"
     end
 
 end
