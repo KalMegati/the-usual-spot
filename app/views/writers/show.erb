@@ -9,3 +9,9 @@ Characters:
 Locations:
 
 <br><br>
+
+<% if session[:writer_id] and session[:writer_id] == @writer.id %>
+    <form action="/writers/<%= @writer.id %>/edit" method="get">
+        <input type="submit" value="Edit Information">
+    </form>
+<% end%>

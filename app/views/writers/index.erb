@@ -2,7 +2,7 @@
 
 <ol>
 <% @writers.each do |writer| %>
-    <li> <%=writer.icon%> ~ <%=writer.handle%> </li>
+    <li><a href="/writers/<%= writer.id %>"><%= writer.icon %></a> ~ <%=writer.handle%> </li>
 <% end %>
 </ol>
 

@@ -19,6 +19,10 @@
         <%= yield %>
 
       <footer class="branding">
+        <a href="/home">Home</a>
+
+        <br><br>
+      
         <% if session[:writer_id] %>
           <p>Viewing as Writer: "<%= Writer.find_by(id: session[:writer_id]).handle%>"</p>
           <form action="/logout" method="POST">
