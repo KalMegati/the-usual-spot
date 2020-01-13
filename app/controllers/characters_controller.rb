@@ -12,12 +12,14 @@ class CharactersController < ApplicationController
     post "/characters/new" do #creates a new character
         @character = Character.create(params[:character])
         @character.writer_id = session[:writer_id]
-        binding.pry
+        @character.save
         redirect to "/home"
     end
 
     get "/characters/:id" do #displays the character
-
+        @character = Character.find(params[:id])
+        @writer = Writer.find(@character.writer_id)
+        erb :'/characters/show'
     end
 
     get "/characters/:id/edit" do #page to edit character
