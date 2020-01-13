@@ -1,0 +1,8 @@
+<h1>Characters</h1>
+
+<ol>
+<% @characters.each do |character| %>
+    <li><a href="/characters/<%= character.id %>"><%= character.name %></a> ~ <%=character.blurb%> </li>
+<% end %>
+</ol>
+

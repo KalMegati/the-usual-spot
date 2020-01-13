@@ -1,15 +1,19 @@
 class CharactersController < ApplicationController
 
     get "/characters" do #displays all characters with blurbs
-
+        @characters = Character.all
+        erb :'/characters/index'
     end
 
     get "/characters/new" do #page to create new character
-        
+        erb :'/characters/new'
     end
 
     post "/characters/new" do #creates a new character
-
+        @character = Character.create(params[:character])
+        @character.writer_id = session[:writer_id]
+        binding.pry
+        redirect to "/home"
     end
 
     get "/characters/:id" do #displays the character
