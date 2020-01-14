@@ -34,4 +34,8 @@ class ApplicationController < Sinatra::Base
     redirect to "/home"
   end
 
+  def spelunker
+    request.path_info
+  end
+
 end
