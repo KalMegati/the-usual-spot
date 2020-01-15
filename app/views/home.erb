@@ -6,6 +6,18 @@
     <% end %>
 </ul>
 <br>
-Characters
+<a href="/characters">Characters</a>
 <br>
-Locations
+<ul style="list-style-type:disc;">
+    <% @characters.each do |character| %>
+        <li><%= character.name %></li>
+    <% end %>
+</ul>
+<br>
+<a href="/locations">Locations</a>
+<br>
+<ul style="list-style-type:disc;">
+    <% @locations.each do |location| %>
+        <li><%= location.name %></li>
+    <% end %>
+</ul>

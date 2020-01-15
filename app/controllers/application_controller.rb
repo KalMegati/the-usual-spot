@@ -20,6 +20,8 @@ class ApplicationController < Sinatra::Base
 
   get "/home" do
     @writers = Writer.all
+    @characters = Character.all
+    @locations = Location.all
     erb :home
   end
 
