@@ -1,0 +1,16 @@
+<h1><%=@location.name%></h1>
+<br>
+<label><%=@location.blurb%><label>
+<br><br>
+Haunts:
+
+<br><br>
+
+~ <%= @writer.icon %>
+
+<% if session[:writer_id] and session[:writer_id] == @writer.id %>
+    <form action="/locations/<%= @location.id %>/edit" method="get">
+        <input type="submit" value="Edit Location">
+    </form>
+<% end%>
+

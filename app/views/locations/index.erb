@@ -1,0 +1,8 @@
+<h1>Locations</h1>
+
+<ol>
+<% @locations.each do |location| %>
+    <li><a href="/locations/<%= location.id %>"><%= location.name %></a> ~ <%=location.blurb%> </li>
+<% end %>
+</ol>
+

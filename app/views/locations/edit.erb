@@ -1,0 +1,31 @@
+<h1>Edit Location</h1>
+
+<br><br>
+
+<form action="/locations/<%= @location.id %>" method="POST">
+    <input id="hidden" type="hidden" name="_method" value="patch">
+
+    Name: <input type="text" name="location[name]" value="<%= @location.name %>">
+    <br><br>
+
+    Blurb: <input type="text" name="location[blurb]" value="<%= @location.blurb %>">
+    <br><br>
+
+    Story: <input type="text" name="location[story]" value="<%= @location.story %>">
+    <br><br>
+
+    Image: <input type="text" name="location[image]" value="<%= @location.image %>">
+    <br><br>
+
+    <input type="submit" value="re:BUILD">
+
+</form>
+
+Delete Location
+
+<form action="/locations/<%= @location.id %>" method="post">
+    <input id="hidden" type="hidden" name="_method" value="delete">
+
+    <input type="submit" value="un:BUILD">
+
+</form>

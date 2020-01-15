@@ -7,4 +7,5 @@ end
 use Rack::MethodOverride
 use WritersController
 use CharactersController
+use LocationsController
 run ApplicationController
