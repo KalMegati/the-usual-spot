@@ -1,0 +1,31 @@
+<h1>Edit Character</h1>
+
+<br><br>
+
+<form action="/characters/<%= @character.id %>" method="POST">
+    <input id="hidden" type="hidden" name="_method" value="patch">
+
+    Name: <input type="text" name="character[name]" value="<%= @character.name %>">
+    <br><br>
+
+    Blurb: <input type="text" name="character[blurb]" value="<%= @character.blurb %>">
+    <br><br>
+
+    Story: <input type="text" name="character[story]" value="<%= @character.story %>">
+    <br><br>
+
+    Image: <input type="text" name="character[image]" value="<%= @character.image %>">
+    <br><br>
+
+    <input type="submit" value="re:BIRTH">
+
+</form>
+
+Delete Character
+
+<form action="/characters/<%= @character.id %>" method="post">
+    <input id="hidden" type="hidden" name="_method" value="delete">
+
+    <input type="submit" value="un:BIRTH">
+
+</form>

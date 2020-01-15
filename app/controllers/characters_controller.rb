@@ -23,15 +23,21 @@ class CharactersController < ApplicationController
     end
 
     get "/characters/:id/edit" do #page to edit character
-
+        @character = Character.find(params[:id])
+        @writer = Writer.find(@character.writer_id)
+        erb :'/characters/edit'
     end
 
     patch "/characters/:id" do #edits the character
-
+        @character = Character.find(params[:id])
+        @character.update(params[:character])
+        redirect to "/characters/#{@character.id}"
     end
 
     delete "/characters/:id" do #deletes the character and their haunts
-
+        @character = Character.find(params[:id])
+        @character.delete
+        redirect to "/characters"
     end
 
 end
