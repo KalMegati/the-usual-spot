@@ -8,4 +8,5 @@ use Rack::MethodOverride
 use WritersController
 use CharactersController
 use LocationsController
+use HauntsController
 run ApplicationController

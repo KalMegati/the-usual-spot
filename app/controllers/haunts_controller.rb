@@ -7,7 +7,7 @@ class HauntsController < ApplicationController
     end
 
     post "/location/:id/haunts" do #creates the haunt
-
+        binding.pry
     end
 
     delete "/haunts/:id" do #deletes the haunt

@@ -4,11 +4,15 @@
 <br><br>
 Haunts:
 
+<% if session[:writer_id] %>
+    <a href="/location/<%=@location.id%>/haunts">Add Suspects</a>
+<% end %>
+
 <br><br>
 
 ~ <%= @location.writer.icon %>
 
-<% if session[:writer_id] and session[:writer_id] == @writer.id %>
+<% if session[:writer_id] and session[:writer_id] == @location.writer.id %>
     <form action="/locations/<%= @location.id %>/edit" method="get">
         <input type="submit" value="Edit Location">
     </form>

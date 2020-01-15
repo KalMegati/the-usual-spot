@@ -8,7 +8,7 @@ Haunts:
 
 ~ <%= @character.writer.icon %>
 
-<% if session[:writer_id] and session[:writer_id] == @writer.id %>
+<% if session[:writer_id] and session[:writer_id] == @character.writer.id %>
     <form action="/characters/<%= @character.id %>/edit" method="get">
         <input type="submit" value="Edit Character">
     </form>

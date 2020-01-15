@@ -43,6 +43,18 @@ class WritersController < ApplicationController
 
     delete "/writers/:id" do #deletes the writer and their creations
         @writer = Writer.find(params[:id])
+        @writer.characters.each { |character|
+            character.haunts.each { |haunt| 
+                haunt.delete
+            }
+            character.delete
+        }
+        @writer.locations.each { |location|
+            location.haunts.each { |haunt| 
+                haunt.delete
+            }
+            location.delete
+        }
         @writer.delete
         session.clear
         redirect to "/home"

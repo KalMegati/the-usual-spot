@@ -1,9 +1,19 @@
 <h1><%= @location.name %></h1>
 
-Character
+<form action="/location/<%=@location.id%>/haunts" method="POST">
+
+Character<br>
+
+<% @writer.characters.each do |character| %>
+    <input type="radio" name="character_id" id="<%= character.id %>" value="<%= character.id %>"><%= character.name %></input><br>
+<% end %>
 
 <br>
 
-Reason
+Reason: <input type="text" name="blurb">
 
 <br>
+
+<input type="submit" value="HAUNT">
+
+</form>
