@@ -6,7 +6,7 @@ Haunts:
 
 <br><br>
 
-~ <%= @writer.icon %>
+~ <%= @character.writer.icon %>
 
 <% if session[:writer_id] and session[:writer_id] == @writer.id %>
     <form action="/characters/<%= @character.id %>/edit" method="get">

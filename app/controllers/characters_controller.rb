@@ -18,13 +18,11 @@ class CharactersController < ApplicationController
 
     get "/characters/:id" do #displays the character
         @character = Character.find(params[:id])
-        @writer = Writer.find(@character.writer_id)
         erb :'/characters/show'
     end
 
     get "/characters/:id/edit" do #page to edit character
         @character = Character.find(params[:id])
-        @writer = Writer.find(@character.writer_id)
         erb :'/characters/edit'
     end
 

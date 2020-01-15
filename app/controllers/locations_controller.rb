@@ -18,13 +18,11 @@ class LocationsController < ApplicationController
 
     get "/locations/:id" do #displays the location
         @location = Location.find(params[:id])
-        @writer = Writer.find(@location.writer_id)
         erb :'/locations/show'
     end
 
     get "/locations/:id/edit" do #page to edit location
         @location = Location.find(params[:id])
-        @writer = Writer.find(@location.writer_id)
         erb :'/locations/edit'
     end
 
