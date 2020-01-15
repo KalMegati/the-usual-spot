@@ -23,7 +23,7 @@
 
         <br><br>
       
-        <% if session[:writer_id] %>
+        <% if session[:writer_id] and Writer.find_by(id: session[:writer_id])%>
           <p>Viewing as Writer: "<%= Writer.find_by(id: session[:writer_id]).handle%>"</p>
           <form action="/logout" method="POST">
           <input type="submit" value="Log Out">
