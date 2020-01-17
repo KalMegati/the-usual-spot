@@ -1,11 +1,11 @@
 <h1><%=@location.name%></h1>
 <br>
-<label><%=@location.blurb%><label>
+<label><%=@location.blurb%></label>
 <br><br>
 Haunts:
 
 <% if session[:writer_id] %>
-    <a href="/location/<%=@location.id%>/haunts">Add Suspects</a>
+    <a href="/locations/<%=@location.id%>/haunts">Add Suspects</a>
 <% end %>
 
 <br><br>
@@ -16,5 +16,5 @@ Haunts:
     <form action="/locations/<%= @location.id %>/edit" method="get">
         <input type="submit" value="Edit Location">
     </form>
-<% end%>
+<% end %>
 

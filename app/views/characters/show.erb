@@ -1,10 +1,16 @@
 <h1><%=@character.name%></h1>
 <br>
-<label><%=@character.blurb%><label>
+<label><%=@character.blurb%></label>
 <br><br>
 Haunts:
 
-<br><br>
+<br>
+<ul>
+<% @character.haunts.each do |haunt| %>
+    <li><%=haunt.location.name%> ~ <%=haunt.blurb%></li>
+<% end %>
+</ul>
+<br>
 
 ~ <%= @character.writer.icon %>
 
@@ -12,5 +18,5 @@ Haunts:
     <form action="/characters/<%= @character.id %>/edit" method="get">
         <input type="submit" value="Edit Character">
     </form>
-<% end%>
+<% end %>
 
