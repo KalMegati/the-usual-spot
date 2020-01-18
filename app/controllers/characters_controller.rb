@@ -23,6 +23,7 @@ class CharactersController < ApplicationController
 
     get "/characters/:id/edit" do #page to edit character
         @character = Character.find(params[:id])
+        redirect to "/error" unless session[:writer_id] == @character.writer.id
         erb :'/characters/edit'
     end
 

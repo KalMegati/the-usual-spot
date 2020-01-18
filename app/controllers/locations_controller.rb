@@ -23,6 +23,7 @@ class LocationsController < ApplicationController
 
     get "/locations/:id/edit" do #page to edit location
         @location = Location.find(params[:id])
+        redirect to "/error" unless session[:writer_id] == @location.writer.id
         erb :'/locations/edit'
     end
 

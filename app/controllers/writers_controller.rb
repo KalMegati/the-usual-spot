@@ -32,6 +32,7 @@ class WritersController < ApplicationController
 
     get "/writers/:id/edit" do #page for writer to edit their information
         @writer = Writer.find(params[:id])
+        redirect to "/error" unless session[:writer_id] == @writer.id
         erb :'/writers/edit'
     end
 

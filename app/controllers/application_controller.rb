@@ -36,6 +36,10 @@ class ApplicationController < Sinatra::Base
     redirect to "/home"
   end
 
+  get "/error" do #INVALID
+    erb :error
+  end
+
   def self.spelunker
     request.path_info
   end
