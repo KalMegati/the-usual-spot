@@ -1,16 +1,20 @@
 <h1><%=@location.name%></h1>
-<br>
-<label><%=@location.blurb%></label>
-<br><br>
+~ <label><i><%=@location.blurb%></i></label>
+<br><br><br>
 Haunts:
-
 <% if session[:writer_id] %>
     <a href="/locations/<%=@location.id%>/haunts">Add Suspects</a>
 <% end %>
-
+<br><br>
+<ul>
+<% @location.haunts.each do |haunt| %>
+    <li><a href="/characters/<%= haunt.character.id %>"><%=haunt.character.name%></a> ~ <%=haunt.blurb%></li>
+<% end %>
+</ul>
 <br><br>
 
-~ <%= @location.writer.icon %>
+~ <a href="/writers/<%= @location.writer.id%>"><i><%= @location.writer.icon %></i></a>
+
 
 <% if session[:writer_id] and session[:writer_id] == @location.writer.id %>
     <form action="/locations/<%= @location.id %>/edit" method="get">

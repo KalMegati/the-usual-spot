@@ -1,12 +1,23 @@
 <h1><%=@writer.handle%></h1>
-<br>
-<label><%=@writer.icon%><label>
+~<label><i><%=@writer.icon%></i><label>
 <br><br>
 Characters:
 
-<br><br>
+<ul>
+<% @writer.characters.each do |character| %>
+    <li><a href="/characters/<%= character.id %>"><%= character.name %></a></li>
+<% end %>
+</ul>
+
+<br>
 
 Locations:
+
+<ul>
+<% @writer.locations.each do |location| %>
+    <li><a href="/locations/<%= location.id %>"><%= location.name %></a></li>
+<% end %>
+</ul>
 
 <br><br>
 

@@ -1,18 +1,17 @@
 <h1><%=@character.name%></h1>
-<br>
-<label><%=@character.blurb%></label>
-<br><br>
+~ <label><i><%=@character.blurb%></i></label>
+<br><br><br>
 Haunts:
 
 <br>
 <ul>
 <% @character.haunts.each do |haunt| %>
-    <li><%=haunt.location.name%> ~ <%=haunt.blurb%></li>
+    <li><a href="/locations/<%= haunt.location.id %>"><%=haunt.location.name%></a> ~ <%=haunt.blurb%></li>
 <% end %>
 </ul>
-<br>
+<br><br>
 
-~ <%= @character.writer.icon %>
+~ <a href="/writers/<%= @character.writer.id%>"><i><%= @character.writer.icon %></i></a>
 
 <% if session[:writer_id] and session[:writer_id] == @character.writer.id %>
     <form action="/characters/<%= @character.id %>/edit" method="get">
