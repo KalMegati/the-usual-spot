@@ -11,8 +11,12 @@ class WritersController < ApplicationController
 
     post "/writers/new" do #creates the new writer, then sends back to home
         @writer = Writer.create(params[:writer])
-        session[:writer_id] = @writer.id
-        redirect to "/home"
+        if @writer.errors.any?
+            redirect to "/error"
+        else
+            session[:writer_id] = @writer.id
+            redirect to "/home"
+        end
     end
 
     get "/writers/login" do #page to log in as existing writer

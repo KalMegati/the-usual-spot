@@ -11,9 +11,13 @@ class CharactersController < ApplicationController
 
     post "/characters/new" do #creates a new character
         @character = Character.create(params[:character])
-        @character.writer_id = session[:writer_id]
-        @character.save
-        redirect to "/home"
+        if @location.errors.any?
+            redirect to "/error"
+        else
+            @character.writer_id = session[:writer_id]
+            @character.save
+            redirect to "/home"
+        end
     end
 
     get "/characters/:id" do #displays the character

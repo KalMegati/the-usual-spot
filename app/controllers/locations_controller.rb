@@ -11,9 +11,13 @@ class LocationsController < ApplicationController
 
     post "/locations/new" do #creates a new location
         @location = Location.create(params[:location])
-        @location.writer_id = session[:writer_id]
-        @location.save
-        redirect to "/home"
+        if @location.errors.any?
+            redirect to "/error"
+        else
+            @location.writer_id = session[:writer_id]
+            @location.save
+            redirect to "/home"
+        end
     end
 
     get "/locations/:id" do #displays the location
