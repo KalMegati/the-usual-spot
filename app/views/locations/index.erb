@@ -1,8 +1,15 @@
 <h1>Locations</h1>
 
-<ol>
+<ul>
 <% @locations.each do |location| %>
     <li><a href="/locations/<%= location.id %>"><%= location.name %></a> ~ <%=location.blurb%> </li>
 <% end %>
-</ol>
+</ul>
 
+<% if session[:writer_id] %>
+
+<br>
+<a href="/location/new">Create New Location</a>
+<br>
+
+<% end %>

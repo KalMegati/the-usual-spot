@@ -1,8 +1,15 @@
 <h1>Characters</h1>
 
-<ol>
+<ul>
 <% @characters.each do |character| %>
     <li><a href="/characters/<%= character.id %>"><%= character.name %></a> ~ <%=character.blurb%> </li>
 <% end %>
-</ol>
+</ul>
 
+<% if session[:writer_id] %>
+
+<br>
+<a href="/characters/new">Create New Character</a>
+<br>
+
+<% end %>
