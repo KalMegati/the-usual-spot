@@ -4,15 +4,21 @@
 
 <form action="/characters/new" method="POST">
 
-    Name: <input type="text" name="character[name]">
+    Name and Blurb are required attributes; Story and Image are optional.
     <br><br>
 
-    Blurb: <input type="text" name="character[blurb]">
+    Name: <input type="text" name="character[name]" required>
     <br><br>
 
+    The Blurb is a short phrase descriptive of the character, usually less than five words long.<br>
+    Blurb: <input type="text" name="character[blurb]" required>
+    <br><br>
+
+    The Story is a a more detailed description of the character, up to 30,000 characters.<br>
     Story: <input type="text" name="character[story]">
     <br><br>
 
+    For the Image, copy an image url to display in association with the character.<br>
     Image: <input type="text" name="character[image]">
     <br><br>
 

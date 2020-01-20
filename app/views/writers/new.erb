@@ -5,15 +5,15 @@
 <form action="/writers/new" method="POST">
 
     Your 'Handle' is your username. <br>
-    Handle: <input type="text" name="writer[handle]">
+    Handle: <input type="text" name="writer[handle]" required>
     <br><br>
 
     Your 'Password' will keep your creations secure. <br>
-    Password: <input type="text" name="writer[password]">
+    Password: <input type="text" name="writer[password]" required>
     <br><br>
 
-    Your 'Icon' is a three-character symbol to mark your creations. <br>
-    Icon: <input type="text" name="writer[icon]">
+    Your 'Icon' is a symbol to mark your creations. It must be exactly 3 characters long and can only contain numerals and capital letters.<br>
+    Icon: <input type="text" name="writer[icon]" pattern="[A-Z0-9]{3}" required>
     <br><br>
 
     <input type="submit" value="Take up the Pen">

@@ -4,15 +4,21 @@
 
 <form action="/locations/new" method="POST">
 
-    Name: <input type="text" name="location[name]">
+    Name and Blurb are required attributes; Story and Image are optional.
     <br><br>
 
-    Blurb: <input type="text" name="location[blurb]">
+    Name: <input type="text" name="location[name]" required>
     <br><br>
 
+    The Blurb is a short phrase descriptive of the location, usually only a sentence or two.<br>
+    Blurb: <input type="text" name="location[blurb]" required>
+    <br><br>
+
+    The Story is a a more detailed description of the location, up to 30,000 characters.<br>
     Story: <input type="text" name="location[story]">
     <br><br>
 
+    For the Image, copy an image url to display in association with the location.<br>
     Image: <input type="text" name="location[image]">
     <br><br>
 
