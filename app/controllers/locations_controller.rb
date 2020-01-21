@@ -16,7 +16,8 @@ class LocationsController < ApplicationController
     post "/locations/new" do #creates a new location
         @location = Location.create(params[:location])
         if @location.errors.any?
-            redirect to "/error"
+            @errors = @location.errors
+            erb :error
         else
             @location.writer_id = session[:writer_id]
             @location.save
@@ -42,7 +43,8 @@ class LocationsController < ApplicationController
         @location = Location.find(params[:id])
         @location.update(params[:location])
         if @location.errors.any?
-            redirect to "/error"
+            @errors = @location.errors
+            erb :error
         else
             redirect to "/locations/#{@location.id}"
         end

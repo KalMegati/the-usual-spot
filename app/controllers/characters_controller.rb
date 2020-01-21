@@ -16,7 +16,8 @@ class CharactersController < ApplicationController
     post "/characters/new" do #creates a new character
         @character = Character.create(params[:character])
         if @character.errors.any?
-            redirect to "/error"
+            @errors = @character.errors
+            erb :error
         else
             @character.writer_id = session[:writer_id]
             @character.save
@@ -42,7 +43,8 @@ class CharactersController < ApplicationController
         @character = Character.find(params[:id])
         @character.update(params[:character])
         if @character.errors.any?
-            redirect to "/error"
+            @errors = @character.errors
+            erb :error
         else
             redirect to "/characters/#{@character.id}"
         end

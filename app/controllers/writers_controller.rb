@@ -12,7 +12,8 @@ class WritersController < ApplicationController
     post "/writers/new" do #creates the new writer, then sends back to home
         @writer = Writer.create(params[:writer])
         if @writer.errors.any?
-            redirect to "/error"
+            @errors = @writer.errors
+            erb :error
         else
             session[:writer_id] = @writer.id
             redirect to "/home"
@@ -51,7 +52,8 @@ class WritersController < ApplicationController
         @writer = Writer.find(params[:id])
         @writer.update(params[:writer])
         if @writer.errors.any?
-            redirect to "/error"
+            @errors = @writer.errors
+            erb :error
         else
             redirect to "/writers/#{@writer.id}"
         end
