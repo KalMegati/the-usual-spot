@@ -36,8 +36,12 @@ class ApplicationController < Sinatra::Base
     redirect to "/home"
   end
 
-  get "/error" do #INVALID
+  get "/error" do #bad data input
     erb :error
+  end
+
+  get "/hacker" do #forced URL change
+    erb :hacker
   end
 
   def self.spelunker

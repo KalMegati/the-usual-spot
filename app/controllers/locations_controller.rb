@@ -6,7 +6,11 @@ class LocationsController < ApplicationController
     end
 
     get "/locations/new" do #page to create new location
-        erb :'/locations/new'
+        unless session[:writer_id]
+            redirect to "/hacker"
+        else
+            erb :'/locations/new'
+        end
     end
 
     post "/locations/new" do #creates a new location
@@ -27,14 +31,21 @@ class LocationsController < ApplicationController
 
     get "/locations/:id/edit" do #page to edit location
         @location = Location.find(params[:id])
-        redirect to "/error" unless session[:writer_id] == @location.writer.id
-        erb :'/locations/edit'
+        unless session[:writer_id] == @location.writer.id
+            redirect to "/hacker"
+        else
+            erb :'/locations/edit'
+        end
     end
 
     patch "/locations/:id" do #edits the location
         @location = Location.find(params[:id])
         @location.update(params[:location])
-        redirect to "/locations/#{@location.id}"
+        if @location.errors.any?
+            redirect to "/error"
+        else
+            redirect to "/locations/#{@location.id}"
+        end
     end
 
     delete "/locations/:id" do #deletes the location and their haunts

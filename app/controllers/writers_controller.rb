@@ -25,8 +25,12 @@ class WritersController < ApplicationController
 
     post "/writers/login" do #logs in, then sends back to home
         @writer = Writer.find_by(params[:writer])
-        session[:writer_id] = @writer.id
-        redirect to "/home"
+        unless @writer
+            redirect to "/hacker"
+        else
+            session[:writer_id] = @writer.id
+            redirect to "/home"
+        end
     end
 
     get "/writers/:id" do #displays the writer and their creations
@@ -36,14 +40,21 @@ class WritersController < ApplicationController
 
     get "/writers/:id/edit" do #page for writer to edit their information
         @writer = Writer.find(params[:id])
-        redirect to "/error" unless session[:writer_id] == @writer.id
-        erb :'/writers/edit'
+        unless session[:writer_id] == @writer.id
+            redirect to "/hacker"
+        else
+            erb :'/writers/edit'
+        end
     end
 
     patch "/writers/:id" do #edits the writer's information, then displays them
         @writer = Writer.find(params[:id])
         @writer.update(params[:writer])
-        redirect to "/writers/#{@writer.id}"
+        if @writer.errors.any?
+            redirect to "/error"
+        else
+            redirect to "/writers/#{@writer.id}"
+        end
     end
 
     delete "/writers/:id" do #deletes the writer and their creations
