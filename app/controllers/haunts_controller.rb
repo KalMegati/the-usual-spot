@@ -12,7 +12,9 @@ class HauntsController < ApplicationController
     end
 
     delete "/haunts/:id" do #deletes the haunt
-
+        @haunt = Haunt.find(params[:id])
+        @haunt.delete
+        redirect to "/characters/#{@haunt.character.id}"
     end
 
 end

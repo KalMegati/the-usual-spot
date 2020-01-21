@@ -20,7 +20,7 @@
     <input type="submit" value="re:BIRTH">
 
 </form>
-
+<br><br>
 Delete Character
 
 <form action="/characters/<%= @character.id %>" method="post">
@@ -29,3 +29,15 @@ Delete Character
     <input type="submit" value="un:BIRTH">
 
 </form>
+<br><br>
+Delete Haunts
+
+<ul><% @character.haunts.each do |haunt|%>
+<br>
+<li><form action="/haunts/<%= haunt.id %>" method="post">
+    <input id="hidden" type="hidden" name="_method" value="delete">
+
+    <%= haunt.location.name %>   <input type="submit" value="abandon">
+</form></li>
+
+<% end %></ul>
