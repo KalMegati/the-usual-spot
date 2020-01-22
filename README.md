@@ -50,7 +50,13 @@ If you used the Seed and would like to access any of the provided Writers or the
 
 Deleting a Character or Location will delete any associated Haunts, and deleting a Writer will delete all of their creations. To remove all work from the database, in the terminal enter the command:
 
-'rake db:migrate VERSION=0'
+`rake db:migrate VERSION=0`
+
+Then enter the command:
+
+`rake db:migrate`
+
+This will ready the database for usage again.
 
 ##Pending Updates
 
