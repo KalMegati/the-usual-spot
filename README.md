@@ -58,6 +58,10 @@ Then enter the command:
 
 This will ready the database for usage again.
 
+##Video Tutorial
+
+https://drive.google.com/file/d/1gl9KL6wA5P5haLkHMQFbq2hJ1pVrhw6i/view?usp=sharing
+
 ##Pending Updates
 
 1) Encryption
