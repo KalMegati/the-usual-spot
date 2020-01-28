@@ -65,6 +65,7 @@ https://drive.google.com/file/d/1gl9KL6wA5P5haLkHMQFbq2hJ1pVrhw6i/view?usp=shari
 ## Pending Updates
 
 1) Encryption
+2) Implementation of current_user method to replace session hash calls
 
 ## Contributing
 
