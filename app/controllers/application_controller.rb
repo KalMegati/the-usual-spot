@@ -44,8 +44,20 @@ class ApplicationController < Sinatra::Base
     erb :hacker
   end
 
-  def self.spelunker
-    request.path_info
+
+  helpers do
+
+    def self.spelunker
+      request.path_info
+    end
+
+    def current_user(sesh)
+      @writer = Writer.find(sesh[:writer_id])
+    end
+
+    
+
   end
+
 
 end

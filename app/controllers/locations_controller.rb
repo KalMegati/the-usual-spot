@@ -32,7 +32,8 @@ class LocationsController < ApplicationController
 
     get "/locations/:id/edit" do #page to edit location
         @location = Location.find(params[:id])
-        unless session[:writer_id] == @location.writer.id
+        binding.pry
+        unless @location.writer == current_user(session)
             redirect to "/hacker"
         else
             erb :'/locations/edit'
