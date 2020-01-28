@@ -1,12 +1,12 @@
-#Welcome to The Usual Spot
+# Welcome to The Usual Spot
 
 The Usual Spot is an application for collaborative world-building. Writers can create Characters and Locations and detail the ways they interact with each other.
 
-##DISCLAIMER
+## DISCLAIMER
 
 This application does not currently use any form of encryption, so you are advised against providing any sensitive information.
 
-##Installation and Setup
+## Installation and Setup
 
 1) Clone the repo:
 
@@ -20,7 +20,7 @@ This application does not currently use any form of encryption, so you are advis
 
 `bundle install`
 
-###Seeding (Optional)
+### Seeding (Optional)
 
 If you would like some starter characters and locations to see how the site displays, enter the command:
 
@@ -28,7 +28,7 @@ If you would like some starter characters and locations to see how the site disp
 
 This will provide you with the works of iconic cyberpunk creators.
 
-##Execution
+## Execution
 
 In the terminal, enter the command:
 
@@ -40,7 +40,7 @@ You will recive an output of:
 
 Open an internet browser and go to the listed `#<address>#` to check out The Usual Spot.
 
-##Usage
+## Usage
 
 Without logging in to the site, you can view current Writers, Characters, and Locations, but you will not be able to make any edits. The different types of creations are navigated via hyperlinks, and you can use the page footer at any point to return to the Home directory.
 
@@ -58,15 +58,27 @@ Then enter the command:
 
 This will ready the database for usage again.
 
-##Video Tutorial
+## Video Tutorial
 
 https://drive.google.com/file/d/1gl9KL6wA5P5haLkHMQFbq2hJ1pVrhw6i/view?usp=sharing
 
-##Pending Updates
+## Pending Updates
 
 1) Encryption
 
-##Development Notes
+## Contributing
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/KalMegati/the-usual-spot. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+
+## License
+
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+
+## Code of Conduct
+
+Everyone interacting in the P2eBuilder project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/p2e_builder/blob/master/CODE_OF_CONDUCT.md).
+
+## Development Notes
 
 # build database
 # models: users, locations, characters, char-loca
